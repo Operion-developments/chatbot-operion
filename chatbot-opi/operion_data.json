@@ -1,0 +1,106 @@
+{
+    "empresa": "Operion",
+    "solucoes": [
+      {
+        "id": 1,
+        "title": "Criação de Sites de Alta Performance",
+        "description": "Transforme sua presença online com sites rápidos, responsivos e com design moderno e funcional.",
+        "items": ["Site Institucional", "Site Catálogo", "E-commerce", "Landing Page"],
+        "slug": "criacao-de-sites",
+        "faq": {
+          "UX e UI Design": "Priorizamos a experiência do usuário (UX) e a interface intuitiva (UI) para garantir um site funcional e incrível...",
+          "Alta Performance": "A velocidade e o desempenho do seu site são essenciais para garantir uma boa experiência ao usuário..."
+        }
+      },
+      {
+        "id": 2,
+        "title": "Desenvolvimento de Layouts Modernos",
+        "description": "Layouts personalizados e otimizados, criando uma experiência única e fácil de usar.",
+        "items": ["Design Responsivo", "Experiência do Usuário", "Interface Moderna", "Navegação Intuitiva"],
+        "slug": "layouts",
+        "faq": {
+          "Experiência Imersiva": "Nossos layouts são criados para oferecer uma experiência envolvente e cativante..."
+        }
+      },
+      {
+        "id": 3,
+        "title": "Assistente Virtual Para o Seu Negócio",
+        "description": "Automatize atendimentos com assistentes virtuais rápidos e personalizados, disponíveis 24h para seus clientes.",
+        "items": ["Atendimento Personalizado", "Integração WhatsApp/Telegram", "Atendimento Instantâneo", "Automação Inteligente"],
+        "slug": "assistente-virtual",
+        "faq": {
+          "Integração Completa": "Nosso assistente virtual se conecta facilmente ao WhatsApp e Telegram..."
+        }
+      },
+      {
+        "id": 4,
+        "title": "Hospedagem de Sites Premium",
+        "description": "Hospedagem rápida e segura, com alta disponibilidade e suporte técnico especializado para seu site.",
+        "items": ["UX Audits", "Design thinking", "Methodologies", "Segurança Reforçada"],
+        "slug": "hospedagem",
+        "faq": {
+          "Segurança Garantida": "A segurança da nossa hospedagem é prioridade..."
+        }
+      },
+      {
+        "id": 5,
+        "title": "Manutenção e Otimização de Sites",
+        "description": "Cuidamos de todos os detalhes do seu site, garantindo segurança, otimização e funcionamento perfeito.",
+        "items": ["Atualizações Constantes", "Ajustes Rápidos", "Segurança Garantida", "Suporte Contínuo"],
+        "slug": "manutencao",
+        "faq": {
+          "Otimizações de Site": "Manter seu site otimizado é essencial para um bom desempenho..."
+        }
+      },
+      {
+        "id": 6,
+        "title": "Sites Prontos e Funcionais",
+        "description": "Adquira sites prontos, com design profissional, instalação rápida e fácil personalização para seu negócio.",
+        "items": ["Implantação Rápida", "Design Moderno", "Funcionalidades Integradas", "Funcionalidade Completa"],
+        "slug": "sites-prontos",
+        "faq": {
+          "Fácil Configuração": "Nossos sites são projetados para serem instalados rapidamente..."
+        }
+      }
+    ],
+    "intents": [
+      {
+        "intent": "saudacao",
+        "examples": ["Olá", "Oi", "Tudo bem?"],
+        "response": "Olá! Sou o assistente da Operion. Como posso te ajudar hoje com nossos serviços digitais?"
+      },
+      {
+        "intent": "listar_servicos",
+        "examples": ["Quais serviços vocês oferecem?", "O que vocês fazem?", "Quais são as soluções da Operion?"],
+        "response": "Na Operion, oferecemos: {lista_solucoes}. Qual deles você gostaria de saber mais?"
+      },
+      {
+        "intent": "detalhar_servico",
+        "examples": ["Me fale sobre criação de sites", "O que é hospedagem premium?", "Como funciona o assistente virtual?"],
+        "entities": ["servico"],
+        "response": "Aqui está o que sei sobre {servico}: {descricao}. Quer mais detalhes ou um orçamento?"
+      },
+      {
+        "intent": "solicitar_orcamento",
+        "examples": ["Quanto custa um site?", "Quero um orçamento para assistente virtual", "Qual o preço da hospedagem?"],
+        "entities": ["servico"],
+        "response": "Que tal conversarmos sobre o orçamento para {servico} pelo WhatsApp? Aqui está o link: https://wa.me/5511999999999"
+      },
+      {
+        "intent": "pergunta_faq",
+        "examples": ["O que é UX?", "Como vocês garantem segurança?", "Vocês fazem backups?"],
+        "entities": ["faq"],
+        "response": "Sobre {faq}: {resposta_faq}. Posso ajudar com mais alguma coisa?"
+      },
+      {
+        "intent": "despedida",
+        "examples": ["Tchau", "Obrigado", "Até mais"],
+        "response": "Foi um prazer ajudar! Se precisar de mais alguma coisa, é só me chamar. Até logo!"
+      },
+      {
+        "intent": "nao_entendido",
+        "examples": [],
+        "response": "Desculpe, não entendi direito. Pode me explicar melhor? Estou aqui para ajudar com os serviços da Operion!"
+      }
+    ]
+  }
