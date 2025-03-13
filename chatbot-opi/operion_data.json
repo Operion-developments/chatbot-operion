@@ -1,106 +1,189 @@
 {
-    "empresa": "Operion",
-    "solucoes": [
-      {
-        "id": 1,
-        "title": "Criação de Sites de Alta Performance",
-        "description": "Transforme sua presença online com sites rápidos, responsivos e com design moderno e funcional.",
-        "items": ["Site Institucional", "Site Catálogo", "E-commerce", "Landing Page"],
-        "slug": "criacao-de-sites",
-        "faq": {
-          "UX e UI Design": "Priorizamos a experiência do usuário (UX) e a interface intuitiva (UI) para garantir um site funcional e incrível...",
-          "Alta Performance": "A velocidade e o desempenho do seu site são essenciais para garantir uma boa experiência ao usuário..."
-        }
-      },
-      {
-        "id": 2,
-        "title": "Desenvolvimento de Layouts Modernos",
-        "description": "Layouts personalizados e otimizados, criando uma experiência única e fácil de usar.",
-        "items": ["Design Responsivo", "Experiência do Usuário", "Interface Moderna", "Navegação Intuitiva"],
-        "slug": "layouts",
-        "faq": {
-          "Experiência Imersiva": "Nossos layouts são criados para oferecer uma experiência envolvente e cativante..."
-        }
-      },
-      {
-        "id": 3,
-        "title": "Assistente Virtual Para o Seu Negócio",
-        "description": "Automatize atendimentos com assistentes virtuais rápidos e personalizados, disponíveis 24h para seus clientes.",
-        "items": ["Atendimento Personalizado", "Integração WhatsApp/Telegram", "Atendimento Instantâneo", "Automação Inteligente"],
-        "slug": "assistente-virtual",
-        "faq": {
-          "Integração Completa": "Nosso assistente virtual se conecta facilmente ao WhatsApp e Telegram..."
-        }
-      },
-      {
-        "id": 4,
-        "title": "Hospedagem de Sites Premium",
-        "description": "Hospedagem rápida e segura, com alta disponibilidade e suporte técnico especializado para seu site.",
-        "items": ["UX Audits", "Design thinking", "Methodologies", "Segurança Reforçada"],
-        "slug": "hospedagem",
-        "faq": {
-          "Segurança Garantida": "A segurança da nossa hospedagem é prioridade..."
-        }
-      },
-      {
-        "id": 5,
-        "title": "Manutenção e Otimização de Sites",
-        "description": "Cuidamos de todos os detalhes do seu site, garantindo segurança, otimização e funcionamento perfeito.",
-        "items": ["Atualizações Constantes", "Ajustes Rápidos", "Segurança Garantida", "Suporte Contínuo"],
-        "slug": "manutencao",
-        "faq": {
-          "Otimizações de Site": "Manter seu site otimizado é essencial para um bom desempenho..."
-        }
-      },
-      {
-        "id": 6,
-        "title": "Sites Prontos e Funcionais",
-        "description": "Adquira sites prontos, com design profissional, instalação rápida e fácil personalização para seu negócio.",
-        "items": ["Implantação Rápida", "Design Moderno", "Funcionalidades Integradas", "Funcionalidade Completa"],
-        "slug": "sites-prontos",
-        "faq": {
-          "Fácil Configuração": "Nossos sites são projetados para serem instalados rapidamente..."
-        }
+  "empresa": "Operion",
+  "solucoes": [
+    {
+      "id": 1,
+      "title": "Criação de Sites de Alta Performance",
+      "description": "Transforme sua presença online com sites rápidos, responsivos e com design moderno e funcional.",
+      "items": [
+        "Site Institucional",
+        "Site Catálogo",
+        "E-commerce",
+        "Landing Page"
+      ],
+      "slug": "criacao-de-sites",
+      "faq": {
+        "UX e UI Design": "Na Operion, priorizamos a experiência do usuário (UX) e a interface intuitiva (UI) para garantir um site que não apenas pareça incrível, mas que também seja funcional. Criamos layouts modernos e alinhados com a identidade visual da sua marca, proporcionando uma navegação fluida e intuitiva. Com pesquisas e testes, desenvolvemos interfaces que maximizam a retenção do usuário e a taxa de conversão. Usamos princípios de design baseados em comportamento humano para facilitar a interação, tornando cada página mais envolvente. Um bom UX/UI faz com que seu site seja mais acessível, responsivo e agradável de usar, reduzindo a taxa de rejeição e aumentando o tempo de permanência dos visitantes. Criamos soluções sob medida, garantindo que cada detalhe da experiência digital do seu público seja pensado para converter mais e fortalecer sua marca.",
+        "Alta Performance": "A velocidade e o desempenho do seu site são essenciais para garantir uma boa experiência ao usuário e um melhor posicionamento nos mecanismos de busca. Na Operion, utilizamos tecnologias avançadas como Next.js, Vite e WordPress para garantir tempos de carregamento reduzidos e máximo desempenho. Implementamos técnicas como otimização de imagens, compressão de arquivos, carregamento assíncrono e caching inteligente. Sites rápidos reduzem a taxa de rejeição, aumentam a conversão e melhoram a experiência geral do visitante. Além disso, um site otimizado para performance carrega de forma fluida em qualquer dispositivo, seja desktop ou mobile. Garantimos que seu site esteja sempre dentro dos padrões de performance recomendados pelo Google PageSpeed e Core Web Vitals, proporcionando não apenas um design moderno, mas também um desempenho excepcional que destaca seu negócio online.",
+        "Personalização Total": "Cada site desenvolvido pela Operion é único e adaptado às necessidades do seu negócio. Criamos layouts exclusivos, focados na identidade da sua marca e no público-alvo que você deseja atingir. Nossos sites são altamente customizáveis, permitindo integração com sistemas, adição de novas funcionalidades e personalização total da interface. Seja um site institucional, e-commerce ou landing page, garantimos que cada detalhe seja pensado para impactar seu público da melhor forma possível. Trabalhamos com desenvolvimento modular e escalável, garantindo que seu site possa evoluir conforme sua empresa cresce. Além disso, implementamos painéis de gerenciamento intuitivos para que você tenha controle total sobre seu conteúdo. A personalização vai além do design – criamos soluções sob medida para proporcionar a melhor experiência para você e seus clientes.",
+        "Segurança Digital": "A segurança do seu site é uma prioridade. Implementamos práticas modernas para garantir que sua plataforma esteja protegida contra ameaças cibernéticas, como ataques DDoS, injeção de SQL e malwares. Utilizamos protocolos de segurança como SSL (HTTPS), autenticação em dois fatores e proteção contra bots maliciosos. Além disso, realizamos backups automáticos e monitoramento contínuo para identificar e corrigir vulnerabilidades antes que se tornem um problema. Um site seguro transmite mais credibilidade ao usuário e evita problemas como vazamento de dados e perda de informações. Nossa equipe também realiza auditorias de segurança periodicamente, garantindo que seu site esteja sempre atualizado e protegido. Com a Operion, você tem a tranquilidade de saber que sua presença digital está segura e seus clientes podem navegar sem preocupações.",
+        "Suporte Contínuo": "Nosso compromisso com seu projeto não termina após a entrega do site. Oferecemos suporte técnico contínuo e planos de manutenção para garantir que seu site continue funcionando perfeitamente. Realizamos atualizações de software, correção de bugs, otimização de performance e melhorias de segurança. Caso precise de novas funcionalidades ou ajustes, nossa equipe está sempre disponível para implementar as mudanças necessárias. Um site bem mantido é essencial para garantir seu bom funcionamento e evitar problemas técnicos que possam impactar a experiência dos usuários. Além disso, oferecemos consultoria e acompanhamento para ajudar você a extrair o máximo do seu site. Com a Operion, você conta com um parceiro estratégico para manter sua presença digital sempre moderna, segura e eficiente."
       }
-    ],
-    "intents": [
-      {
-        "intent": "saudacao",
-        "examples": ["Olá", "Oi", "Tudo bem?"],
-        "response": "Olá! Sou o assistente da Operion. Como posso te ajudar hoje com nossos serviços digitais?"
-      },
-      {
-        "intent": "listar_servicos",
-        "examples": ["Quais serviços vocês oferecem?", "O que vocês fazem?", "Quais são as soluções da Operion?"],
-        "response": "Na Operion, oferecemos: {lista_solucoes}. Qual deles você gostaria de saber mais?"
-      },
-      {
-        "intent": "detalhar_servico",
-        "examples": ["Me fale sobre criação de sites", "O que é hospedagem premium?", "Como funciona o assistente virtual?"],
-        "entities": ["servico"],
-        "response": "Aqui está o que sei sobre {servico}: {descricao}. Quer mais detalhes ou um orçamento?"
-      },
-      {
-        "intent": "solicitar_orcamento",
-        "examples": ["Quanto custa um site?", "Quero um orçamento para assistente virtual", "Qual o preço da hospedagem?"],
-        "entities": ["servico"],
-        "response": "Que tal conversarmos sobre o orçamento para {servico} pelo WhatsApp? Aqui está o link: https://wa.me/5511999999999"
-      },
-      {
-        "intent": "pergunta_faq",
-        "examples": ["O que é UX?", "Como vocês garantem segurança?", "Vocês fazem backups?"],
-        "entities": ["faq"],
-        "response": "Sobre {faq}: {resposta_faq}. Posso ajudar com mais alguma coisa?"
-      },
-      {
-        "intent": "despedida",
-        "examples": ["Tchau", "Obrigado", "Até mais"],
-        "response": "Foi um prazer ajudar! Se precisar de mais alguma coisa, é só me chamar. Até logo!"
-      },
-      {
-        "intent": "nao_entendido",
-        "examples": [],
-        "response": "Desculpe, não entendi direito. Pode me explicar melhor? Estou aqui para ajudar com os serviços da Operion!"
+    },
+    {
+      "id": 2,
+      "title": "Desenvolvimento de Layouts Modernos",
+      "description": "Criamos layouts exclusivos e modernos que destacam sua marca. Utilizamos as tecnologias mais avançadas para desenvolver interfaces intuitivas, atrativas e funcionais. Da concepção à entrega, cada detalhe é pensado para gerar a melhor experiência ao usuário e fortalecer a identidade visual do seu negócio.",
+      "items": [
+        "Design Responsivo",
+        "Experiência do Usuário",
+        "Interface Moderna",
+        "Navegação Intuitiva"
+      ],
+      "slug": "layouts",
+      "faq": {
+        "Experiência Imersiva": "Nossos layouts são criados para oferecer uma experiência envolvente e cativante. Cada elemento visual é pensado estrategicamente para guiar o usuário de forma intuitiva, garantindo uma navegação fluida e agradável.  Buscamos criar designs que despertam emoções e incentivam a interação, gerando maior engajamento com a sua marca. Além disso, trabalhamos com paletas de cores, tipografias e elementos gráficos harmoniosos para criar um impacto visual memorável. Um layout bem planejado não é apenas bonito, mas funcional, ajudando a fortalecer sua presença digital.",
+        "Responsividade Perfeita": "Seu layout precisa se adaptar a qualquer dispositivo sem perder qualidade ou funcionalidade. Desenvolvemos interfaces totalmente responsivas, garantindo uma experiência consistente em desktops, tablets e smartphones. Testamos cada design em múltiplos tamanhos de tela para garantir que seu site se mantenha rápido, acessível e agradável de usar.  Além disso, priorizamos a usabilidade mobile, pois sabemos que grande parte do tráfego online vem de dispositivos móveis. Com a Operion, seu site terá um layout impecável em qualquer tela.",
+        "Identidade Visual Respeitada": "Seu site precisa transmitir a essência da sua marca. Criamos layouts personalizados que refletem sua identidade visual, seguindo cores, fontes e estilos que representem seu negócio de forma autêntica. Trabalhamos para garantir que cada elemento visual esteja alinhado com a comunicação da sua empresa, reforçando sua presença digital e criando uma conexão mais forte com seu público. Um design consistente fortalece sua marca e torna seu negócio mais reconhecível.",
+        "Navegação Inteligente": "De nada adianta um layout bonito se o usuário não consegue encontrar o que procura. Nossos designs são planejados para proporcionar uma navegação clara e intuitiva, reduzindo o tempo de busca por informações e aumentando a eficiência da interação. Utilizamos princípios de arquitetura da informação para distribuir conteúdos de forma lógica, tornando a experiência do usuário mais agradável e sem obstáculos. Isso resulta em maior retenção e conversões mais eficientes.",
+        "Design Escalável": "Seu site precisa evoluir junto com o seu negócio. Criamos layouts que permitem fácil expansão e adaptação para futuras atualizações. Se você precisar adicionar novas páginas, seções ou funcionalidades, seu design já estará preparado para essa evolução. Trabalhamos com estruturas flexíveis que permitem crescer sem comprometer a harmonia visual ou a experiência do usuário. Dessa forma, sua presença digital está sempre atualizada e moderna."
       }
-    ]
-  }
+    },
+    {
+      "id": 3,
+      "title": "Assistente Virtual Para o Seu Negócio",
+      "description": "Automatize atendimentos com assistentes virtuais rápidos e personalizados, disponíveis 24h para seus clientes.",
+      "items": [
+        "Atendimento Personalizado",
+        "Integração WhatsApp/Telegram",
+        "Atendimento Instantâneo",
+        "Automação Inteligente"
+      ],
+      "slug": "assistente-virtual",
+      "faq": {
+        "Integração Completa": "Nosso assistente virtual se conecta facilmente ao WhatsApp e Telegram, permitindo que seus clientes entrem em contato diretamente por esses canais. Ele pode responder mensagens automaticamente, enviar informações personalizadas e até realizar tarefas como agendamentos e envio de notificações. Com essa integração, você garante um atendimento rápido e eficiente, sem precisar de um operador humano para cada solicitação. Além disso, o assistente aprende com as interações, tornando-se cada vez mais preciso e adaptado ao seu negócio. Essa tecnologia melhora a experiência do cliente, reduz custos operacionais e mantém sua empresa sempre acessível.",
+        "Comandos de Voz": "Nossos assistentes virtuais não se limitam a texto! Eles podem reconhecer e responder comandos de voz, oferecendo um atendimento mais prático e acessível para seus clientes. Isso significa que os usuários podem interagir naturalmente, sem precisar digitar, tornando a experiência mais rápida e intuitiva. A tecnologia de reconhecimento de fala permite uma compreensão precisa das solicitações e respostas personalizadas em tempo real. Seja para buscar informações, realizar pedidos ou solucionar dúvidas, a funcionalidade de voz melhora a interação e torna o atendimento mais humanizado, aumentando a satisfação dos usuários e facilitando o suporte automatizado.",
+        "Atendimento 24h": "Diferente de atendentes humanos, um assistente virtual nunca descansa! Ele está disponível 24 horas por dia, sete dias por semana, garantindo que seus clientes tenham suporte a qualquer momento. Isso significa que mesmo fora do horário comercial sua empresa continua oferecendo atendimento, aumentando a satisfação e fidelização dos clientes. Além disso, o assistente pode lidar com múltiplas solicitações simultaneamente, sem filas de espera. A automação permite um suporte ágil e contínuo, otimizando o tempo da sua equipe e garantindo respostas rápidas para perguntas frequentes. Com isso, você melhora a experiência do usuário e mantém sua empresa sempre acessível.",
+        "Personalização Avançada": "Cada empresa tem necessidades específicas, e é por isso que nossos assistentes virtuais são altamente personalizáveis. Eles podem ser configurados para atender diferentes segmentos, responder de forma personalizada e até adaptar seu tom de voz de acordo com o perfil do cliente. Além disso, podem ser treinados para reconhecer perguntas específicas, oferecer recomendações inteligentes e interagir de maneira mais natural. Com integração a bancos de dados e APIs, o assistente pode acessar informações detalhadas e fornecer respostas mais precisas. Assim, sua empresa oferece um atendimento mais completo, eficiente e alinhado às expectativas do público.",
+        "Redução de Custos": "Além de melhorar o atendimento, um assistente virtual reduz significativamente os custos operacionais. Com ele, sua empresa pode automatizar tarefas repetitivas, diminuir a necessidade de uma grande equipe de suporte e otimizar recursos. Isso significa menos tempo gasto com perguntas frequentes e mais eficiência na resolução de problemas complexos. A automação do atendimento permite um fluxo de trabalho mais organizado e reduz o tempo de espera dos clientes. Dessa forma, sua empresa melhora a produtividade e economiza, sem comprometer a qualidade do serviço oferecido."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Hospedagem de Sites Premium",
+      "description": "Hospedagem rápida e segura, com alta disponibilidade e suporte técnico especializado para seu site.",
+      "items": [
+        "UX Audits",
+        "Design thinking",
+        "Methodologies",
+        "Segurança Reforçada"
+      ],
+      "slug": "hospedagem",
+      "faq": {
+        "Segurança Garantida": "A segurança da nossa hospedagem é prioridade. Utilizamos protocolos avançados de proteção contra ataques DDoS, firewalls inteligentes e criptografia SSL para garantir que seus dados e os de seus clientes estejam sempre protegidos.  Além disso, monitoramos os servidores 24 horas por dia, identificando ameaças e prevenindo invasões antes mesmo de acontecerem. Dessa forma, seu site opera com máxima estabilidade, sem riscos de ataques ou perda de informações.",
+        "Backups Automáticos": "Nossos planos incluem backups diários e automáticos, garantindo que seus dados estejam sempre protegidos. Em caso de falhas, erros ou ataques, podemos restaurar seu site rapidamente, sem complicações. Os backups são armazenados em locais seguros e podem ser acessados sempre que necessário, proporcionando tranquilidade e segurança para seu negócio.",
+        "Desempenho Otimizado": "Nosso serviço de hospedagem é altamente otimizado para garantir sites rápidos e eficientes. Utilizamos servidores de alta performance, CDN integrada e tecnologias avançadas de cache para melhorar o tempo de carregamento das páginas. Isso não só melhora a experiência do usuário, mas também favorece o ranqueamento do seu site nos mecanismos de busca, como o Google.",
+        "Planos com E-mail Profissional": "Além da hospedagem, oferecemos planos com e-mails profissionais personalizados com seu domínio, garantindo mais credibilidade para sua empresa. Com espaço de armazenamento adequado e suporte a IMAP/POP3, você pode acessar seus e-mails de qualquer lugar, mantendo uma comunicação profissional e eficiente com seus clientes.",
+        "Suporte Especializado": "Nosso suporte técnico está sempre disponível para resolver qualquer problema relacionado à sua hospedagem. Seja para ajustes na configuração, dúvidas sobre o painel de controle ou otimização de desempenho, nossa equipe especializada oferece atendimento ágil e eficaz. Nosso compromisso é garantir que seu site funcione sem interrupções."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Manutenção e Otimização de Sites",
+      "description": "Cuidamos de todos os detalhes do seu site, garantindo segurança, otimização e funcionamento perfeito.",
+      "items": [
+        "Atualizações Constantes",
+        "Ajustes Rápidos",
+        "Segurança Garantida",
+        "Suporte Contínuo"
+      ],
+      "slug": "manutencao",
+      "faq": {
+        "Otimizações de Site": "Manter seu site otimizado é essencial para um bom desempenho. Com nossa manutenção, garantimos que ele carregue rapidamente, seja responsivo e esteja sempre pronto para proporcionar a melhor experiência ao usuário. Além disso, aplicamos melhorias contínuas para atender às exigências dos mecanismos de busca, garantindo maior visibilidade e mais acessos para sua empresa.",
+        "Atualizações Necessárias": "A tecnologia evolui rapidamente, e seu site precisa acompanhar essa evolução. Com nosso serviço de manutenção, realizamos todas as atualizações necessárias para manter a compatibilidade com navegadores, dispositivos e plugins essenciais. Assim, seu site sempre funciona perfeitamente, sem riscos de incompatibilidade ou falhas inesperadas.",
+        "Correção de Bugs": "Erros podem comprometer a experiência do usuário e prejudicar sua empresa. Nossa manutenção inclui a correção de bugs, falhas e problemas técnicos que possam surgir, garantindo que seu site funcione sem interrupções. Monitoramos continuamente para identificar e solucionar qualquer erro antes que ele impacte seus visitantes.",
+        "Segurança e Proteção": "Sites desatualizados são alvos fáceis para ataques cibernéticos. Nossa manutenção inclui medidas avançadas de segurança para proteger seu site contra hackers, malwares e vulnerabilidades.Implementamos firewalls, monitoramos acessos suspeitos e realizamos backups periódicos para garantir máxima proteção.",
+        "Suporte Técnico Especializado": "Contar com um suporte especializado faz toda a diferença. Nosso time está sempre disponível para resolver qualquer problema e oferecer suporte técnico sempre que você precisar. Com um atendimento rápido e eficiente, garantimos que seu site esteja sempre no ar e funcionando perfeitamente."
+      }
+    },
+    {
+      "id": 6,
+      "title": "Sites Prontos e Funcionais",
+      "description": "Adquira sites prontos, com design profissional, instalação rápida e fácil personalização para seu negócio.",
+      "items": [
+        "Implantação Rápida",
+        "Design Moderno",
+        "Funcionalidades Integradas",
+        "Funcionalidade Completa"
+      ],
+      "slug": "sites-prontos",
+      "faq": {
+        "Fácil Configuração": "Nossos sites são projetados para serem instalados rapidamente, sem complicações. Com apenas alguns cliques, seu site estará pronto para uso. Além disso, oferecemos suporte para garantir que tudo funcione perfeitamente, desde a hospedagem até os ajustes finais. Se precisar de personalização, nossa equipe está à disposição para modificar qualquer detalhe.",
+        "Design Profissional": "Desenvolvemos layouts modernos e responsivos para garantir a melhor experiência ao usuário. Cada site é pensado para oferecer navegação intuitiva e compatibilidade com todos os dispositivos, desde smartphones até desktops. Nosso foco está na estética, na funcionalidade e na identidade visual da sua marca.",
+        "Customização Simples": "Todos os nossos sites permitem ajustes de cores, imagens e textos de forma simples e prática. Você pode modificar o conteúdo de maneira intuitiva, sem necessidade de conhecimento técnico. Além disso, oferecemos templates flexíveis que podem ser personalizados para atender às suas necessidades.",
+        "Otimizado para SEO": "Nossos sites são desenvolvidos com práticas de SEO para garantir melhor ranqueamento no Google. Isso significa que seu site será mais fácil de encontrar pelos clientes. Utilizamos técnicas de carregamento rápido, otimização de palavras-chave e estrutura amigável para mecanismos de busca.",
+        "Segurança Garantida": "Segurança é prioridade! Todos os nossos sites vêm com proteção contra ataques cibernéticos e backups regulares. Trabalhamos com os melhores servidores e implementamos medidas como certificados SSL, firewalls e atualizações automáticas para manter sua plataforma segura e confiável."
+      }
+    }
+  ],
+  "intents": [
+    {
+      "intent": "saudacao",
+      "examples": [
+        "Olá",
+        "Oi",
+        "Tudo bem?"
+      ],
+      "response": "Olá! Sou o assistente da Operion. Como posso te ajudar hoje com nossos serviços digitais?"
+    },
+    {
+      "intent": "listar_servicos",
+      "examples": [
+        "Quais serviços vocês oferecem?",
+        "O que vocês fazem?",
+        "Quais são as soluções da Operion?"
+      ],
+      "response": "Na Operion, oferecemos: {lista_solucoes}. Qual deles você gostaria de saber mais?"
+    },
+    {
+      "intent": "detalhar_servico",
+      "examples": [
+        "Me fale sobre criação de sites",
+        "O que é hospedagem premium?",
+        "Como funciona o assistente virtual?"
+      ],
+      "entities": [
+        "servico"
+      ],
+      "response": "Aqui está o que sei sobre {servico}: {descricao}. Quer mais detalhes ou um orçamento?"
+    },
+    {
+      "intent": "solicitar_orcamento",
+      "examples": [
+        "Quanto custa um site?",
+        "Quero um orçamento para assistente virtual",
+        "Qual o preço da hospedagem?"
+      ],
+      "entities": [
+        "servico"
+      ],
+      "response": "Que tal conversarmos sobre o orçamento para {servico} pelo WhatsApp? Aqui está o link: https://wa.me/5511999999999"
+    },
+    {
+      "intent": "pergunta_faq",
+      "examples": [
+        "O que é UX?",
+        "Como vocês garantem segurança?",
+        "Vocês fazem backups?"
+      ],
+      "entities": [
+        "faq"
+      ],
+      "response": "Sobre {faq}: {resposta_faq}. Posso ajudar com mais alguma coisa?"
+    },
+    {
+      "intent": "despedida",
+      "examples": [
+        "Tchau",
+        "Obrigado",
+        "Até mais"
+      ],
+      "response": "Foi um prazer ajudar! Se precisar de mais alguma coisa, é só me chamar. Até logo!"
+    },
+    {
+      "intent": "nao_entendido",
+      "examples": [],
+      "response": "Desculpe, não entendi direito. Pode me explicar melhor? Estou aqui para ajudar com os serviços da Operion!"
+    }
+  ]
+}
