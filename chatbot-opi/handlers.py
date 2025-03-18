@@ -53,12 +53,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await asyncio.sleep(1)
         await update.message.reply_text(f"{get_saudacao()}! Tudo bem? Eu sou o Opi, da Operion. Qual é o seu nome?")
 
-async def handle_typing(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    chat_id = str(update.message.chat_id)
-    user_data = context.user_data
-    user_data["is_typing"] = True
-    user_data["last_activity_time"] = datetime.now().timestamp()
-
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = str(update.message.chat_id)
     user_data = context.user_data
@@ -78,13 +72,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     logger.info(f"Received message: {mensagem}")
 
     user_data["pending_messages"].append({"text": mensagem, "timestamp": datetime.now().timestamp()})
-    user_data["is_typing"] = False
+    user_data["is_typing"] = True  # Assume que o usuário pode estar digitando mais
 
-    # Aguardar até que o usuário pare de digitar
-    while user_data["is_typing"]:
-        await asyncio.sleep(1)
+    # Aguarda 5 segundos sem novas mensagens para considerar que o usuário terminou
     await asyncio.sleep(5)
-    logger.info(f"Processing messages after 5 seconds. Pending messages: {user_data['pending_messages']}")
+    while datetime.now().timestamp() - user_data["pending_messages"][-1]["timestamp"] < 5:
+        await asyncio.sleep(1)
+    
+    user_data["is_typing"] = False
+    logger.info(f"Processing messages after waiting. Pending messages: {user_data['pending_messages']}")
 
     mensagens = [msg["text"] for msg in user_data["pending_messages"]]
     user_data["pending_messages"] = []
@@ -152,7 +148,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 user_data["orçamento"]["serviço"] = user_data["servicos_mencionados"][0]
                 await iniciar_orcamento(update, context, USERS_DATA)
             else:
-                await update.message.reply_text(f"Você mencionou {', '.join(user_data['servicos_mencionados'])}. Quer um orçamento combinado pra esses serviços? Me conta o ramo do seu negócio pra eu começar!")
+                await update.message.reply_text(f"Ahh legal! Você mencionou {', '.join(user_data['servicos_mencionados'])}. Quer um orçamento combinado pra esses serviços? Me conta o ramo do seu negócio pra eu começar!")
             return
         else:
             await update.message.reply_text(f"Beleza! Você quer um orçamento, né? Pode me dizer pra qual serviço? Tipo criação de site, chatbot, hospedagem...")
@@ -201,21 +197,21 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         **Regras:**
         - Use tom amigável e fluido (ex.: "Ahh legal!", "Entendi!").
         - Não use saudações ("Oi", "Tudo bem?") após o início da conversa, exceto se for a primeira mensagem ou após 1h de pausa.
-        - Faça até 3 mensagens de perguntas por serviço (controle via perguntas_count).
-        - Colete todas as informações primárias (nome da empresa, ramo, solução, redes sociais, domínio, hospedagem).
-        - Para cada solução, coletar secundárias (ex.: para sites: quantidade de produtos, fotos, design, funcionalidades).
-        - Após 3 perguntas ou com todas primárias + 50% das secundárias, resuma e sugira reunião.
+        - Faça até 3 mensagens de perguntas por serviço, cada uma com até 5 perguntas relacionadas.
+        - Antes de perguntar, verifique o histórico para evitar repetir perguntas já respondidas.
+        - Colete informações primárias (nome da empresa, ramo, solução, redes sociais, domínio, hospedagem) em uma única mensagem inicial.
+        - Para cada solução, coletar secundárias específicas em até 2 mensagens adicionais.
+        - Após 3 mensagens de perguntas ou com informações suficientes, resuma e sugira reunião.
         - Resumo deve listar o que o cliente precisa (soluções e detalhes) e o que já possui, sem transcrição literal.
         - Se detectar múltiplos serviços, sugira orçamento combinado no resumo.
         - Se o usuário negar a reunião, ofereça falar com especialista no chat ou enviar proposta em 2h por e-mail/chat.
 
         **Diretrizes de Orçamento:**
-        - **Criação de Sites:** Primárias: ramo, solução, redes sociais, domínio, hospedagem. Secundárias: quantidade de produtos, fotos/descrições, design, funcionalidades.
-        - **Chatbots:** Primárias: ramo, solução, redes sociais, domínio, hospedagem. Secundárias: funcionalidade, canais.
-        - **Hospedagem:** Primárias: ramo, solução, redes sociais, domínio, hospedagem. Secundárias: tráfego, e-mails.
-        - **Layouts:** Primárias: ramo, solução, redes sociais, domínio, hospedagem. Secundárias: preferências de design, site existente.
-        - **Sites Prontos:** Primárias: ramo, solução, redes sociais, domínio, hospedagem. Secundárias: personalização, prazo.
-        - **Manutenção:** Primárias: ramo, solução, redes sociais, domínio, hospedagem. Secundárias: problemas, frequência.
+        - **Chatbots:** Primárias: ramo, nome, redes, domínio, hospedagem. Secundárias: funcionalidade, canais, funcionalidade extra, volume, exemplo.
+        - **Hospedagem:** Primárias: ramo, nome, redes, domínio, hospedagem. Secundárias: tráfego, e-mails, tráfego sazonal, backups, plataforma.
+        - **Sites Prontos:** Primárias: ramo, nome, redes, domínio, hospedagem. Secundárias: personalização, prazo, funcionalidades, foco, exemplo.
+        - **Layouts:** Primárias: ramo, nome, redes, domínio, hospedagem. Secundárias: design, tipo (site/app), site existente, exemplo, interatividade.
+        - **Manutenção:** Primárias: ramo, nome, redes, domínio, hospedagem. Secundárias: tipo, frequência, site/sistema, problemas, monitoramento.
 
         **Contexto:**
         - Nome do usuário: {nome}
@@ -233,17 +229,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 respostas.append(resposta)
                 if "pergunta" in resposta.lower() or "?" in resposta:
                     user_data["perguntas_count"] += 1
-                # Verificar condições para resumo
-                servico_atual = user_data["servicos_mencionados"][0] if user_data["servicos_mencionados"] else None
-                if servico_atual:
-                    respostas_orcamento = user_data["respostas_orcamento"].get(servico_atual, {})
-                    primarias = {"nome": "nome" in respostas_orcamento, "ramo": "ramo" in respostas_orcamento or "resposta_1" in respostas_orcamento,
-                                 "solucao": True, "redes": "redes" in respostas_orcamento, "dominio": "dominio" in respostas_orcamento,
-                                 "hospedagem": "hospedagem" in respostas_orcamento}
-                    secundarias = len([k for k in respostas_orcamento if k.startswith("resposta_") and k not in ["resposta_1"]]) / 4  # Aproximadamente 4 secundárias por serviço
-                    if (user_data["perguntas_count"] >= 3 or (all(primarias.values()) and secundarias >= 0.5)):
-                        respostas.append(await gerar_resumo_e_reuniao(user_data, nome))
-                        user_data["perguntas_count"] = 0  # Resetar após resumo
                 logger.info(f"Received response from Gemini: {resposta}")
             except KeyError as e:
                 logger.error(f"Error parsing Gemini response: {str(e)}. Response: {json.dumps(data)}")
@@ -251,6 +236,20 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             logger.error(f"Gemini API error: {response.status_code} - {response.text}")
             respostas.append(f"Ops, algo deu errado com a API: {response.status_code}. Tenta de novo?")
+
+    # Verificar condições para resumo
+    if user_data["servicos_mencionados"]:
+        servico_atual = user_data["servicos_mencionados"][0]
+        respostas_orcamento = user_data["respostas_orcamento"].get(servico_atual, {})
+        primarias = {"nome": "nome" in respostas_orcamento, "ramo": "ramo" in respostas_orcamento or "resposta_1" in respostas_orcamento,
+                     "solucao": True, "redes": "redes" in respostas_orcamento, "dominio": "dominio" in respostas_orcamento,
+                     "hospedagem": "hospedagem" in respostas_orcamento}
+        secundarias_count = len([k for k in respostas_orcamento if k.startswith("resposta_") and k not in ["resposta_1"]])
+        secundarias_total = 4  # Aproximadamente 4 secundárias por serviço
+        if (user_data["perguntas_count"] >= 3 or (all(primarias.values()) and secundarias_count >= secundarias_total / 2)):
+            resumo = await gerar_resumo_e_reuniao(user_data, nome)
+            respostas = [resumo]  # Substitui todas as respostas anteriores pelo resumo
+            user_data["perguntas_count"] = 0  # Resetar após resumo
 
     for resposta in respostas:
         await asyncio.sleep(random.uniform(5, 15))
@@ -261,29 +260,57 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_data["assunto"] = "; ".join(mensagens)
 
 async def gerar_resumo_e_reuniao(user_data, nome):
-    servico = user_data["servicos_mencionados"][0] if user_data["servicos_mencionados"] else "desconhecido"
-    respostas = user_data["respostas_orcamento"].get(servico, {})
-    resumo = f"Beleza, {nome}! Pelo que entendi você precisa:\n"
-    if servico == "assistente-virtual":
-        resumo += f"- Chatbot\n"
-        if "resposta_2" in respostas:
-            resumo += f"- Função: {respostas['resposta_2'].split(' ')[0].capitalize()}\n"
-        if "whatsapp" in respostas.get("resposta_2", "").lower():
-            resumo += "- Canal: WhatsApp\n"
-    elif servico == "criacao-de-sites":
-        resumo += f"- Site ({respostas.get('resposta_1', 'tipo não especificado')})\n"
-        if "moderno" in respostas.get("resposta_2", "").lower():
-            resumo += "- Layout moderno\n"
+    servicos = user_data["servicos_mencionados"]
+    respostas = user_data["respostas_orcamento"]
+    resumo = f"Beleza, {nome}! Pelo que entendi, você precisa:\n"
+
+    for servico in servicos:
+        respostas_servico = respostas.get(servico, {})
+        if servico == "assistente-virtual":
+            resumo += "- Chatbot\n"
+            if "funcionalidade" in respostas_servico:
+                resumo += f"- Função: {respostas_servico['funcionalidade'].split(' ')[0].capitalize()}\n"
+            if "canais" in respostas_servico:
+                resumo += f"- Canais: {respostas_servico['canais']}\n"
+        elif servico == "hospedagem":
+            resumo += "- Hospedagem otimizada\n"
+            if "trafego" in respostas_servico:
+                resumo += f"- Tráfego estimado: {respostas_servico['trafego']}\n"
+            if "emails" in respostas_servico and "sim" in respostas_servico["emails"].lower():
+                resumo += "- E-mails profissionais\n"
+        elif servico == "sites-prontos":
+            resumo += "- Site a pronta entrega\n"
+            if "personalizacao" in respostas_servico and "sim" in respostas_servico["personalizacao"].lower():
+                resumo += "- Personalização: Sim\n"
+            if "prazo" in respostas_servico:
+                resumo += f"- Prazo: {respostas_servico['prazo']}\n"
+        elif servico == "layouts":
+            resumo += "- Layout para site ou app\n"
+            if "design" in respostas_servico:
+                resumo += f"- Estilo: {respostas_servico['design'].split(' ')[0].capitalize()}\n"
+            if "site_existente" in respostas_servico and "não" not in respostas_servico["site_existente"].lower():
+                resumo += f"- Aplicação: {respostas_servico['site_existente']}\n"
+        elif servico == "manutencao":
+            resumo += "- Plano de manutenção\n"
+            if "tipo_manutencao" in respostas_servico:
+                resumo += f"- Tipo: {respostas_servico['tipo_manutencao'].split(' ')[0].capitalize()}\n"
+            if "frequencia" in respostas_servico:
+                resumo += f"- Frequência: {respostas_servico['frequencia'].split(' ')[0].capitalize()}\n"
+
     ja_possui = ""
-    if "dominio" in respostas:
-        ja_possui += f"- Domínio ({respostas['dominio']})\n"
-    if "hospedagem" in respostas:
-        ja_possui += "- Hospedagem\n"
+    for servico in servicos:
+        respostas_servico = respostas.get(servico, {})
+        if "dominio" in respostas_servico and "não" not in respostas_servico["dominio"].lower():
+            ja_possui += f"- Domínio: {respostas_servico['dominio']}\n"
+        if "redes" in respostas_servico and "nenhuma" not in respostas_servico["redes"].lower():
+            ja_possui += f"- Redes sociais: {respostas_servico['redes']}\n"
     if ja_possui:
         resumo += f"\nJá possui:\n{ja_possui}"
-    if len(user_data["servicos_mencionados"]) > 1:
-        resumo += f"\nE você também mencionou {', '.join(user_data['servicos_mencionados'][1:])}. Podemos incluir tudo num orçamento combinado!\n"
-    resumo += "Obrigado por compartilhar essas infos, assim consigo entender melhor o que você precisa. Pra montar uma proposta personalizada e alinhar os detalhes, o ideal é marcarmos uma reunião rápida com um especialista via Google Meet. Qual dia e horário você tem disponível?"
+
+    if len(servicos) > 1:
+        resumo += f"\nE você também mencionou {', '.join(servicos[1:])}. Podemos incluir tudo num orçamento combinado!\n"
+
+    resumo += f"Obrigado por compartilhar essas infos, {nome}! Assim consigo entender melhor o que você precisa. Pra montar uma proposta personalizada e alinhar os detalhes, o ideal é marcarmos uma reunião rápida com um especialista via Google Meet. Qual dia e horário você tem disponível?"
     return resumo
 
 async def check_inactivity(context: ContextTypes.DEFAULT_TYPE):
